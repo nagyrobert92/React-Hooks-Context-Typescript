@@ -1,7 +1,19 @@
 import React from "react";
 import { Store } from "./Store";
-import { async } from "q";
 
+interface IEpisode {
+  airdate: string;
+  airstap: string;
+  airtime: string;
+  id: number;
+  image: { medium: string; original: string };
+  name: string;
+  number: number;
+  runtime: number;
+  season: number;
+  summary: string;
+  url: string;
+}
 export default function App(): JSX.Element {
   const { state, dispatch } = React.useContext(Store);
   React.useEffect(() => {
@@ -22,7 +34,7 @@ export default function App(): JSX.Element {
       <h1>Rick and Morty</h1>
       <p>Pick your favorite episode</p>
       <section>
-        {state.episodes.map((episode: any) => {
+        {state.episodes.map((episode: IEpisode) => {
           return (
             <section key={episode.id}>
               <img
