@@ -31,12 +31,14 @@ export default function App(): JSX.Element {
   };
   return (
     <React.Fragment>
-      <h1>Rick and Morty</h1>
-      <p>Pick your favorite episode</p>
-      <section>
+      <header className="header">
+        <h1>Rick and Morty</h1>
+        <p>Pick your favorite episode</p>
+      </header>
+      <section className="episode-layout">
         {state.episodes.map((episode: IEpisode) => {
           return (
-            <section key={episode.id}>
+            <section key={episode.id} className="episode-box">
               <img
                 src={episode.image.medium}
                 alt={`Rick and Morty ${episode.name}`}
