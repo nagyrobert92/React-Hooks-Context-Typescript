@@ -1,26 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Store } from "./Store";
 
-function App() {
+export default function App(): JSX.Element {
+  const store = React.useContext(Store);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      {console.log(store)}
+      <h1>Rick and Morty</h1>
+      <p>Pick your favorite episode</p>
+    </React.Fragment>
   );
 }
-
-export default App;
