@@ -37,7 +37,7 @@ export default function App(): JSX.Element {
     return dispatch(dispatchObj);
   };
   const props = {
-    episodes: state.episode,
+    episodes: state.episodes,
     toggleFavAction: toggleFavAction,
     favourites: state.favourites
   };
@@ -50,9 +50,11 @@ export default function App(): JSX.Element {
         </div>
         <div>Favourite(s): {state.favourites.length}</div>
       </header>
-      <section className="episode-layout">
-        <EpisodeList {...props} />
-      </section>
+      <React.Suspense fallback={<div>loading...</div>}>
+        <section className="episode-layout">
+          <EpisodeList {...props} />
+        </section>
+      </React.Suspense>
     </React.Fragment>
   );
 }
