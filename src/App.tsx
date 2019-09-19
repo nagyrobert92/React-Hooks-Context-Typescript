@@ -1,12 +1,9 @@
 import React from "react";
 import { Store } from "./Store";
-import { IAction, IEpisode, IEpisodeProps } from "./interfaces";
 import { Link } from "@reach/router";
 
-const EpisodeList = React.lazy<any>(() => import("./EpisodesList"));
-
-export default function App(): JSX.Element {
-  const { state, dispatch } = React.useContext(Store);
+export default function App(props: any): JSX.Element {
+  const { state } = React.useContext(Store);
 
   return (
     <React.Fragment>
@@ -20,6 +17,7 @@ export default function App(): JSX.Element {
           <Link to="/faves"> Favourite(s): {state.favourites.length}</Link>
         </div>
       </header>
+      {props.children}
     </React.Fragment>
   );
 }
