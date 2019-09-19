@@ -1,7 +1,8 @@
 import React from "react";
 import { IAction, IEpisode, IEpisodeProps } from "./interfaces";
 import { Store } from "./Store";
-import EpisodeList from "./EpisodesList";
+
+const EpisodeList = React.lazy<any>(() => import("./EpisodesList"));
 
 export default function HomePage() {
   const { state, dispatch } = React.useContext(Store);
