@@ -2,7 +2,7 @@ To view deployed version [click here](https://rick-morty-fav.netlify.com/)
 
 # Rick and Morty Favourite Episodes
 
-![](rickandmorty.gif)
+![](rickandmorty.gif))
 
 Front-end React Hooks, Typescript app, fetching data from the Rick and Morty API.
 
